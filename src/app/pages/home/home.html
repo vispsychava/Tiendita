@@ -1,162 +1,141 @@
 <div class="dashboard">
 
-  <!-- HEADER -->
-  <div class="header">
-    <div>
-      <h1>Dashboard Tienda</h1>
-      <p>Panel administrativo de ventas</p>
-    </div>
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <h2 class="logo">STORE</h2>
 
-    <button class="btn">
-      Nuevo Producto
-    </button>
-  </div>
+    <nav>
+      <a href="#">Dashboard</a>
+      <a href="#">Productos</a>
+      <a href="#">Ventas</a>
+      <a href="#">Clientes</a>
+      <a href="#">Configuración</a>
+    </nav>
+  </aside>
 
-  <!-- CARDS -->
-  <div class="cards">
+  <!-- MAIN -->
+  <main class="main">
 
-    <div class="card">
-      <h3>Ventas Totales</h3>
-      <h2>$125,000</h2>
-    </div>
-
-    <div class="card">
-      <h3>Productos</h3>
-      <h2>145</h2>
-    </div>
-
-    <div class="card">
-      <h3>Clientes</h3>
-      <h2>560</h2>
-    </div>
-
-    <div class="card">
-      <h3>Pedidos</h3>
-      <h2>89</h2>
-    </div>
-
-  </div>
-
-  <!-- TABLA -->
-  <div class="table-container">
-
-    <div class="table-header">
-      <h2>Productos Más Vendidos</h2>
-
-      <input
-        type="text"
-        placeholder="Buscar producto..."
-      >
-    </div>
-
-    <table>
-
-      <thead>
-        <tr>
-          <th>Producto</th>
-          <th>Ventas</th>
-          <th>Stock</th>
-          <th>Precio</th>
-          <th>Estado</th>
-        </tr>
-      </thead>
-
-      <tbody>
-
-        <tr>
-          <td>Laptop Gamer</td>
-          <td>35</td>
-          <td>12</td>
-          <td>$18,500</td>
-          <td>
-            <span class="status low">
-              Pocas unidades
-            </span>
-          </td>
-        </tr>
-
-        <tr>
-          <td>Mouse RGB</td>
-          <td>80</td>
-          <td>30</td>
-          <td>$450</td>
-          <td>
-            <span class="status ok">
-              Disponible
-            </span>
-          </td>
-        </tr>
-
-        <tr>
-          <td>Teclado Mecánico</td>
-          <td>55</td>
-          <td>20</td>
-          <td>$1,200</td>
-          <td>
-            <span class="status ok">
-              Disponible
-            </span>
-          </td>
-        </tr>
-
-        <tr>
-          <td>Monitor 24"</td>
-          <td>22</td>
-          <td>10</td>
-          <td>$3,900</td>
-          <td>
-            <span class="status low">
-              Pocas unidades
-            </span>
-          </td>
-        </tr>
-
-      </tbody>
-
-    </table>
-  </div>
-
-  <!-- SECCION INFERIOR -->
-  <div class="bottom-section">
-
-    <div class="box">
-      <h2>Resumen Diario</h2>
-
-      <div class="progress-item">
-        <div class="progress-text">
-          <span>Ventas</span>
-          <span>75%</span>
-        </div>
-
-        <div class="progress-bar">
-          <div class="progress fill-75"></div>
-        </div>
+    <!-- HEADER -->
+    <div class="header">
+      <div>
+        <h1>Dashboard</h1>
+        <p>Resumen general de la tienda</p>
       </div>
 
-      <div class="progress-item">
-        <div class="progress-text">
-          <span>Pedidos entregados</span>
-          <span>60%</span>
-        </div>
+      <button class="btn">
+        + Producto
+      </button>
+    </div>
 
-        <div class="progress-bar">
-          <div class="progress fill-60"></div>
-        </div>
+    <!-- STATS -->
+    <div class="stats">
+
+      <div class="card">
+        <span>Ventas</span>
+        <h2>$125K</h2>
+      </div>
+
+      <div class="card">
+        <span>Pedidos</span>
+        <h2>89</h2>
+      </div>
+
+      <div class="card">
+        <span>Clientes</span>
+        <h2>560</h2>
+      </div>
+
+      <div class="card">
+        <span>Productos</span>
+        <h2>145</h2>
       </div>
 
     </div>
 
-    <div class="box">
-      <h2>Actividad Reciente</h2>
+    <!-- TABLE -->
+    <div class="table-box">
 
-      <ul>
-        <li> Nuevo pedido realizado</li>
-        <li> Producto agregado al inventario</li>
-        <li> Pago confirmado</li>
-        <li> Pedido enviado</li>
-      </ul>
+      <div class="table-header">
+        <h2>Productos</h2>
+
+        <input
+          type="text"
+          placeholder="Buscar..."
+        >
+      </div>
+
+      <table>
+
+        <thead>
+          <tr>
+            <th>Producto</th>
+            <th>Precio</th>
+            <th>Stock</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr>
+            <td>Laptop Gamer</td>
+            <td>$18,500</td>
+            <td>12</td>
+            <td>
+              <span class="status low">
+                Bajo
+              </span>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Mouse RGB</td>
+            <td>$450</td>
+            <td>30</td>
+            <td>
+              <span class="status ok">
+                Disponible
+              </span>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Teclado Mecánico</td>
+            <td>$1,200</td>
+            <td>20</td>
+            <td>
+              <span class="status ok">
+                Disponible
+              </span>
+            </td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
     </div>
 
-  </div>
+    <!-- ACTIVITY -->
+    <div class="activity">
+
+      <h2>Actividad reciente</h2>
+
+      <div class="activity-item">
+        Pedido enviado
+      </div>
+
+      <div class="activity-item">
+        Nuevo cliente registrado
+      </div>
+
+      <div class="activity-item">
+        Producto agregado
+      </div>
+
+    </div>
+
+  </main>
 
 </div>
