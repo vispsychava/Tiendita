@@ -8,14 +8,62 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styles: [`
     :host {
       display: block;
-      font-family: Arial, sans-serif;
-      background: #f3f4f6;
       min-height: 100vh;
-      padding: 20px;
+      background: #0f1115;
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
     }
 
     .dashboard {
-      width: 100%;
+      display: flex;
+      min-height: 100vh;
+      background: #0f1115;
+    }
+
+    /* SIDEBAR */
+
+    .sidebar {
+      width: 240px;
+      background: #171a21;
+      border-right: 1px solid #262b36;
+      padding: 30px 20px;
+    }
+
+    .logo {
+      margin: 0 0 40px;
+      font-size: 24px;
+      letter-spacing: 2px;
+      color: #ffffff;
+    }
+
+    nav {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #9ca3af;
+      padding: 12px 14px;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background: #232834;
+      color: white;
+    }
+
+    /* MAIN */
+
+    .main {
+      flex: 1;
+      padding: 30px;
     }
 
     .header {
@@ -30,29 +78,32 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
     .header h1 {
       margin: 0;
       font-size: 32px;
-      color: #1f2937;
+      color: white;
     }
 
     .header p {
-      margin: 5px 0 0;
-      color: #6b7280;
+      margin-top: 5px;
+      color: #9ca3af;
     }
 
     .btn {
       background: #2563eb;
-      color: white;
       border: none;
+      color: white;
       padding: 12px 18px;
       border-radius: 12px;
       cursor: pointer;
-      font-size: 15px;
+      transition: 0.3s;
+      font-size: 14px;
     }
 
     .btn:hover {
       background: #1d4ed8;
     }
 
-    .cards {
+    /* CARDS */
+
+    .stats {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 20px;
@@ -60,29 +111,30 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
     }
 
     .card {
-      background: white;
+      background: #171a21;
+      border: 1px solid #262b36;
+      border-radius: 18px;
       padding: 20px;
-      border-radius: 16px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
     }
 
-    .card h3 {
-      margin: 0;
-      color: #6b7280;
-      font-size: 15px;
+    .card span {
+      color: #9ca3af;
+      font-size: 14px;
     }
 
     .card h2 {
       margin-top: 10px;
       font-size: 30px;
-      color: #111827;
+      color: white;
     }
 
-    .table-container {
-      background: white;
+    /* TABLE */
+
+    .table-box {
+      background: #171a21;
+      border: 1px solid #262b36;
+      border-radius: 18px;
       padding: 20px;
-      border-radius: 16px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
       overflow-x: auto;
       margin-bottom: 30px;
     }
@@ -96,11 +148,17 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
       gap: 10px;
     }
 
+    .table-header h2 {
+      margin: 0;
+    }
+
     .table-header input {
-      padding: 10px;
+      background: #0f1115;
+      border: 1px solid #2f3542;
+      color: white;
+      padding: 10px 14px;
       border-radius: 10px;
-      border: 1px solid #d1d5db;
-      width: 250px;
+      outline: none;
     }
 
     table {
@@ -109,99 +167,85 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
     }
 
     th {
-      background: #f3f4f6;
       text-align: left;
       padding: 14px;
-      color: #374151;
+      color: #9ca3af;
+      border-bottom: 1px solid #262b36;
+      font-weight: 500;
     }
 
     td {
-      padding: 14px;
-      border-bottom: 1px solid #e5e7eb;
+      padding: 16px 14px;
+      border-bottom: 1px solid #262b36;
     }
 
     tr:hover {
-      background: #f9fafb;
+      background: #1e232d;
     }
+
+    /* STATUS */
 
     .status {
       padding: 6px 12px;
       border-radius: 20px;
-      font-size: 13px;
+      font-size: 12px;
       font-weight: bold;
     }
 
     .ok {
-      background: #dcfce7;
-      color: #166534;
+      background: rgba(34, 197, 94, 0.15);
+      color: #22c55e;
     }
 
     .low {
-      background: #fee2e2;
-      color: #991b1b;
+      background: rgba(239, 68, 68, 0.15);
+      color: #ef4444;
     }
 
-    .bottom-section {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 20px;
-    }
+    /* ACTIVITY */
 
-    .box {
-      background: white;
+    .activity {
+      background: #171a21;
+      border: 1px solid #262b36;
+      border-radius: 18px;
       padding: 20px;
-      border-radius: 16px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
     }
 
-    .box h2 {
+    .activity h2 {
       margin-top: 0;
       margin-bottom: 20px;
-      color: #1f2937;
     }
 
-    .progress-item {
-      margin-bottom: 20px;
-    }
-
-    .progress-text {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 8px;
-    }
-
-    .progress-bar {
-      width: 100%;
-      height: 12px;
-      background: #e5e7eb;
-      border-radius: 20px;
-      overflow: hidden;
-    }
-
-    .progress {
-      height: 100%;
-      border-radius: 20px;
-    }
-
-    .fill-75 {
-      width: 75%;
-      background: #22c55e;
-    }
-
-    .fill-60 {
-      width: 60%;
-      background: #3b82f6;
-    }
-
-    ul {
-      padding-left: 20px;
-      color: #374151;
-    }
-
-    li {
+    .activity-item {
+      background: #1e232d;
+      padding: 14px;
+      border-radius: 12px;
       margin-bottom: 12px;
+      color: #d1d5db;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+
+      .dashboard {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+      }
+
+      .main {
+        padding: 20px;
+      }
+
     }
   `],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class Home {}
+export class Home {
+  constructor() {
+    console.log('Hola');
+  }
+}
