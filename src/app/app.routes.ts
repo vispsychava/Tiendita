@@ -18,6 +18,7 @@ export const routes: Routes = [
     path: 'formulario',
     component:Formulario
   },
+  // hoka
   {
     path: 'home',
     component:Home

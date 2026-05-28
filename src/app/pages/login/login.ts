@@ -153,7 +153,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   color: white;
   font-size: 16px;
   font-weight: bold;
-  cursor: pointer;
+  cursor: pointer; // hola
   transition: 0.3s;
 }
 
