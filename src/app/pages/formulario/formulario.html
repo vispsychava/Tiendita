@@ -1,0 +1,65 @@
+<div class="form-container">
+  
+  <div class="form-header">
+    <h2>Agregar Nuevo Producto</h2>
+    <p>Llena los datos para registrar el artículo en el inventario.</p>
+  </div>
+
+  <form action="/api/productos" method="POST" enctype="multipart/form-data" class="product-form">
+    
+    <div class="form-group">
+      <label for="prod-name">Nombre del Producto</label>
+      <input type="text" id="prod-name" name="name" placeholder="Name" required>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="prod-price">Precio ($)</label>
+        <input type="number" id="prod-price" name="price" step="0.01" min="0" placeholder="0.00" required>
+      </div>
+
+      <div class="form-group">
+        <label for="prod-stock">Stock Inicial</label>
+        <input type="number" id="prod-stock" name="stock" min="0" placeholder="0" required>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="prod-category">Categoría</label>
+        <select id="prod-category" name="category" required>
+          <option value="" disabled selected>Selecciona una opción</option>
+          <option value="tecnologia">Tecnología</option>
+          <option value="audio">Audio</option>
+          <option value="accesorios">Accesorios</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="prod-status">Estado</label>
+        <select id="prod-status" name="status" required>
+          <option value="disponible">Disponible</option>
+          <option value="bajo">Stock Bajo</option>
+          <option value="agotado">Agotado</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="prod-desc">Descripción</label>
+      <textarea id="prod-desc" name="description" rows="4" placeholder="Escribe los detalles del producto..."></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="prod-image">Imagen del Producto</label>
+      <input type="file" id="prod-image" name="image" accept="image/*">
+    </div>
+
+    <div class="form-actions">
+      <button type="button" class="btn-secondary">Cancelar</button>
+      <button type="submit" class="btn">Guardar Producto</button>
+    </div>
+
+  </form>
+
+</div>
